@@ -3,9 +3,9 @@ import { GrNotification } from "react-icons/gr";
 const Navbar = () => {
   return (
     <div className="p-4 flex justify-between items-center">
-      <div className="w-1/3">
+      <div className="w-3/6">
         <input
-          className="w-full border rounded py-2 px-4"
+          className="w-full rounded py-2 px-4 shadow-sm"
           type="text"
           placeholder="Search here...."
         />
