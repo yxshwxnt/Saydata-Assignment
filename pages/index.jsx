@@ -7,6 +7,7 @@ import { CiBookmark } from "react-icons/ci";
 import { RxText } from "react-icons/rx";
 import { FiUploadCloud } from "react-icons/fi";
 import { useDropzone } from "react-dropzone";
+// import { AssemblyAI } from "assemblyai";
 import {
   Modal,
   ModalContent,
@@ -21,14 +22,27 @@ import {
 } from "@nextui-org/react";
 
 export default function Home() {
-  const [selectedLanguage, setSelectedLanguage] = React.useState("Default");
-  const [speakerIdentification, setSpeakerIdentification] =
-    React.useState(false);
+  const [selectedLanguage, setSelectedLanguage] = useState("Default");
+  const [speakerIdentification, setSpeakerIdentification] = useState(false);
 
-  const onDrop = useCallback((acceptedFiles) => {
-    // Handle dropped files logic here
-    // acceptedFiles contains the dropped files
-  }, []);
+  // const client = new AssemblyAI({
+  //   token: process.env.ASSEMBLY_API,
+  // });
+
+  const FILE_URL = "./file.mp3";
+
+  const onDrop = useCallback(async (acceptedFiles) => {}, []);
+
+  const handleTranscribeFile = async () => {
+    // try {
+    //   const transcript = await client.transcripts.create({
+    //     audio_url: FILE_URL,
+    //   });
+    //   console.log("Transcription Text:", transcript.text);
+    // } catch (error) {
+    //   console.error("Transcription Error:", error);
+    // }
+  };
 
   const { getRootProps, getInputProps } = useDropzone({
     onDrop,
@@ -45,13 +59,13 @@ export default function Home() {
           <div className="flex justify-between m-7">
             <div className="flex flex-col">
               <h2 className="text-2xl font-bold">Welcome Shakirat</h2>
-              <p className="text-gray-600">
+              <p className="text-gray-600 text-md">
                 Upload your audio and Video to convert to text
               </p>
             </div>
             <div className="flex">
               <button
-                className="bg-indigo-500 hover:bg-indigo-600 text-white px-6 rounded w-full"
+                className="bg-indigo-500 hover:bg-indigo-600 text-white text-md px-6 rounded w-full"
                 onClick={onOpen}
               >
                 Transcribe File
@@ -122,7 +136,9 @@ export default function Home() {
                           </label>
                         </div>
                         <button
-                          className="bg-gray-300 hover:bg-indigo-500 text-white p-3 rounded-md w-full"                        >
+                          className="bg-gray-300 hover:bg-indigo-500 text-white p-3 rounded-md w-full"
+                          onClick={handleTranscribeFile}
+                        >
                           Transcribe File
                         </button>
                       </ModalBody>
@@ -132,23 +148,30 @@ export default function Home() {
               </Modal>
             </div>
           </div>
-          <div className="flex m-8">
-            <div className="flex flex-col pr-24 border-black rounded-md">
-              <FiFolder className="w-6 h-6 mr-2 mb-8" />
-              <span className="text-slate-800 font-semibold">100</span>
+          <div className="grid grid-cols-3 gap-8 m-8">
+            <div className="flex flex-col border border-slate-200 rounded-xl p-4 ">
+              <div className="w-10 h-10 rounded-full bg-gray-50 flex items-center justify-center mb-2 border border-slate-200">
+                <FiFolder className="text-xl" />
+              </div>
+              <span className="text-slate-800 font-semibold mb-2">100</span>
               <p>Uploaded Files</p>
             </div>
-            <div className="flex flex-col pr-24 border-solid rounded-md">
-              <RxText className="w-6 h-6 mr-2 mb-8" />
-              <span className="text-slate-800 font-semibold">50</span>
+            <div className="flex flex-col border border-slate-200 rounded-xl p-4">
+              <div className="w-10 h-10 rounded-full bg-gray-50 flex items-center justify-center mb-2 border border-slate-200">
+                <RxText className="text-xl" />
+              </div>
+              <span className="text-slate-800 font-semibold mb-2">50</span>
               <p>Transcribed</p>
             </div>
-            <div className="flex flex-col pr-24 border-solid rounded-md">
-              <CiBookmark className="w-6 h-6 mr-2 mb-8" />
-              <span className="text-slate-800 font-semibold">20</span>
+            <div className="flex flex-col border border-slate-200 rounded-xl p-4">
+              <div className="w-10 h-10 rounded-full bg-gray-50 flex items-center justify-center mb-2 border border-slate-200">
+                <CiBookmark className="text-xl" />
+              </div>
+              <span className="text-slate-800 font-semibold mb-2">20</span>
               <p>Saved</p>
             </div>
           </div>
+
           <div className="m-8">
             <Table />
           </div>

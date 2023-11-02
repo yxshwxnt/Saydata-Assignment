@@ -11,7 +11,9 @@ const Navbar = () => {
         />
       </div>
       <div className="flex items-center">
-        <GrNotification className="w-8 h-8 mr-2 bg-blue-100 p-1 rounded-lg" />
+        <div className="w-9 h-9 rounded-full bg-blue-100 flex items-center justify-center">
+          <GrNotification className=" bg-blue-100 " />
+        </div>
         <img
           src="https://sm.ign.com/ign_nordic/cover/a/avatar-gen/avatar-generations_prsz.jpg"
           alt="Profile"
