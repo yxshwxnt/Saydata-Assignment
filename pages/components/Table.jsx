@@ -6,7 +6,7 @@ import {
   TableBody,
   TableRow,
   TableCell,
-  Button,
+  Divider,
 } from "@nextui-org/react";
 
 const recentFiles = [
@@ -16,9 +16,11 @@ const recentFiles = [
 
 export default function App() {
   return (
-    <div className="flex flex-col gap-3">
-      <Table selectionMode="single" defaultSelectedKeys={["2"]} aria-label="Example static collection table">
-        <TableHeader>
+    <div className="">
+      <h2 className="text-xl font-bold mb-2">Recent Files</h2>
+      <Divider />
+      <Table color="primary" selectionMode="multiple" defaultSelectedKeys={["2"]} aria-label="Example static collection table" className="border-none">
+        <TableHeader className="bg-blue-100">
           <TableColumn>NAME</TableColumn>
           <TableColumn>TYPE</TableColumn>
           <TableColumn>DURATION</TableColumn>
@@ -35,7 +37,7 @@ export default function App() {
               <TableCell>{file.createdDate}</TableCell>
               <TableCell>{file.lastUpdated}</TableCell>
               <TableCell>
-                
+                {/* Add action buttons here */}
               </TableCell>
             </TableRow>
           ))}
