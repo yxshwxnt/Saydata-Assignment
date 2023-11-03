@@ -29,7 +29,7 @@ export default function Home() {
   //   token: process.env.ASSEMBLY_API,
   // });
 
-  const FILE_URL = "./file.mp3";
+  // const FILE_URL = "./file.mp3";
 
   const onDrop = useCallback(async (acceptedFiles) => {}, []);
 
@@ -54,7 +54,7 @@ export default function Home() {
     <>
       <div className="flex h-screen">
         <Sidebar />
-        <div className="flex-1 flex flex-col">
+        <div className="flex-1 flex flex-col ml-56">
           <Navbar />
           <div className="flex justify-between m-7">
             <div className="flex flex-col">

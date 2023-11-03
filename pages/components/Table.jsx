@@ -11,18 +11,53 @@ import {
 
 const recentFiles = [
   {
-    name: "File 1",
+    name: "Peng Meeting",
     type: "Audio",
     duration: "30:45",
     createdDate: "2023-10-31",
     lastUpdated: "2023-11-01",
   },
   {
-    name: "File 2",
-    type: "Video",
-    duration: "1:15:20",
-    createdDate: "2023-10-30",
-    lastUpdated: "2023-10-31",
+    name: "Ekene Smart",
+    type: "SML10025",
+    duration: "30:45",
+    createdDate: "2023-10-31",
+    lastUpdated: "2023-11-01",
+  },
+  {
+    name: "Tofunmi Idowu",
+    type: "SML10025",
+    duration: "30:45",
+    createdDate: "2023-10-31",
+    lastUpdated: "2023-11-01",
+  },
+  {
+    name: "Naomi Igimoh",
+    type: "SML10025",
+    duration: "30:45",
+    createdDate: "2023-10-31",
+    lastUpdated: "2023-11-01",
+  },
+  {
+    name: "Edy Hermans",
+    type: "SML10025",
+    duration: "30:45",
+    createdDate: "2023-10-31",
+    lastUpdated: "2023-11-01",
+  },
+  {
+    name: "Timmy Adubi",
+    type: "SML10025",
+    duration: "30:45",
+    createdDate: "2023-10-31",
+    lastUpdated: "2023-11-01",
+  },
+  {
+    name: "Alex Oyebade",
+    type: "SML10025",
+    duration: "30:45",
+    createdDate: "2023-10-31",
+    lastUpdated: "2023-11-01",
   },
 ];
 
@@ -34,8 +69,8 @@ export default function App() {
       <Table
         color="primary"
         selectionMode="multiple"
-        defaultSelectedKeys={["2"]}
         className="border border-none p-3"
+        aria-label="Recent Files Table"
       >
         <TableHeader className="bg-blue-100">
           <TableColumn>Name</TableColumn>
